@@ -59,7 +59,7 @@ async def on_message(message):
                         await myself.send_message(message.channel, mention+" Coordinates: "+coordinates+".")
                 elif splitmsg[1] == "end":
                     if mention in ongoingreads:
-                        answer = "Session #{4} by user {0}: Target {1} was {2}, added by {3}.".format(mention, ongoingreads[mention][0], ongoingreads[mention][1], " ".join(ongoingreads[mention][2]), len([entry for user,entries in log.items() for entry in entries]))
+                        answer = "Session #{4} by user {0}: Target {1} was {2}, added by {3}. Runsheet was {5}".format(mention, ongoingreads[mention][0], ongoingreads[mention][1], " ".join(ongoingreads[mention][2]), len([entry for user,entries in log.items() for entry in entries]), " ".join(splitmsg[2:]))
                         if mention in log:
                             log[mention].append(answer)
                         else:
