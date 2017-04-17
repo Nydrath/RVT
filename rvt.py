@@ -29,7 +29,7 @@ myself = discord.Client()
 
 @myself.event
 async def on_message(message):
-    if not message.author.bot:
+    if message.channel == "#remote-viewing" and not message.author.bot:
         splitmsg = message.content.split()
         if splitmsg[0] == "RVT":
             mention = message.author.mention
