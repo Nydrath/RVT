@@ -72,7 +72,7 @@ async def on_message(message):
                 elif splitmsg[1] == "list":
                     if len(splitmsg) > 2:
                         if splitmsg[2] in log:
-                            logs = log[mention]
+                            logs = log[splitmsg[2]]
                         else:
                             await myself.send_message(message.channel, mention+" Could not find logs of "+splitmsg[2])
                             return
